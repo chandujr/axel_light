@@ -5,11 +5,12 @@ echo ================
 echo Author: Wilmer van der Gaast
 echo Batch file mod: Chandu JR
 echo Thanks to: Stack Exchange Community
-echo Last modified: 14/03/2016
+echo Last modified: 26/01/2017
 echo ------------------------------
 setlocal enabledelayedexpansion
-set output=/Axel2.4/output
+set output=%cd%/output
 set /p link="Download link: "
+set "link="%link%""
 set /p maxConn="Max number of connections: "
 set "var="&for /f "delims=0123456789" %%i in ("%maxConn%") do set var=%%i
 if defined var (goto :ErrorPlace)
