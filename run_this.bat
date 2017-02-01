@@ -9,8 +9,9 @@ echo Last modified: 26/01/2017
 echo ------------------------------
 setlocal enabledelayedexpansion
 set output=%cd%/output
-set /p link="Download link: "
-set "link="%link%""
+set /p "link3=Download link:"
+set "link2=!link3:&=^&!"
+set "link="%link2%""
 set /p maxConn="Max number of connections: "
 set "var="&for /f "delims=0123456789" %%i in ("%maxConn%") do set var=%%i
 if defined var (goto :ErrorPlace)
